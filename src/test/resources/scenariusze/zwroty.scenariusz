@@ -1,0 +1,21 @@
+Opis: Zwroty wracają na stan magazynu
+
+W celu utrzymania aktualnego stanu magazynu
+Jako właściciel sklepu
+Chcę dodawać zwrócone produkty z powrotem na stan magazynu
+
+Scenariusz 1: Zwrócone produkty powinny wrócić na stan magazynu
+
+Dany klient wcześniej kupił czarny sweter ode mnie
+I aktualnie mam na stanie trzy czarne swetry na stanie
+Kiedy klient zwraca sweter
+Wtedy powinienem mieć cztery czarne swetry na stanie magazynu
+
+Scenariusz 2: Wymieniony produkt powinien był zwrócony do magazynu
+
+Dane jest, że klient kupił niebieską część garderoby
+I mam dwie niebieskie części garderoby na stanie magazynu
+I mam trzy czarne części garderoby na stanie magazynu
+Kiedy klient zwraca niebieską część garderoby w celu wymiany na czarną
+Wtedy powinienem mieć trzy niebieskie części garderoby na stanie magazynu
+I dwie czarne części garderoby na stanie magazynu
