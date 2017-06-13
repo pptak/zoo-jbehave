@@ -6,26 +6,26 @@ import static org.junit.Assert.assertTrue;
 import java.util.Map;
 
 import org.apache.commons.collections4.map.HashedMap;
-import org.jbehave.core.annotations.Aliases;
+import org.jbehave.core.annotations.Alias;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-public class MoreBananasStory {
+public class GorillaMoreBananasStoryTest {
 
 	private Integer bananasNo = -1;
 	private Map<Integer, String> expectedMood = new HashedMap<>();
 	private Map<Integer, String> expectedFilling = new HashedMap<>();
 
 
-	public MoreBananasStory() {
+	public GorillaMoreBananasStoryTest() {
 		expectedMood.put(0, "angry");
 		expectedMood.put(5, "sad");
 		expectedMood.put(20, "happy");
 
 		expectedFilling.put(0, "scared");
 		expectedFilling.put(5, "disappointed");
-		expectedFilling.put(20, "satisfy");
+		expectedFilling.put(20, "satisfied");
 	}
 
 	@Given("gorilla gets $number more bananas")
@@ -34,7 +34,7 @@ public class MoreBananasStory {
 	}
 
 	@When("gorilla have had the bananas")
-	@Aliases(values = { "gorilla want to eat bananas", })
+	@Alias("gorilla want to eat bananas")
 	public void theGorillaAte() {
 		assertTrue(bananasNo >= 0);
 	}

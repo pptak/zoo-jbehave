@@ -1,8 +1,10 @@
 package net.zoo;
 
-import static java.util.Arrays.asList;
+import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 
-import org.jbehave.core.Embeddable;
+import java.util.List;
+
+import org.jbehave.core.InjectableEmbedder;
 import org.jbehave.core.annotations.Configure;
 import org.jbehave.core.annotations.UsingEmbedder;
 import org.jbehave.core.annotations.UsingSteps;
@@ -12,27 +14,22 @@ import org.jbehave.core.junit.AnnotatedEmbedderRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import net.zoo.gorilla.MoreBananasStory;
+import net.zoo.gorilla.GorillaMoreBananasStoryTest;
+import net.zoo.staff.StaffMustLoginStoryTest;
 
 @RunWith(AnnotatedEmbedderRunner.class)
 @Configure(storyReporterBuilder = ZOOStoryReporterBuilder.class)
 @UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, 
-	ignoreFailureInStories = true, ignoreFailureInView = true, metaFilters = "-skip")
-@UsingSteps(instances = { MoreBananasStory.class })
-public class ZOOTestRunner implements Embeddable {
+	ignoreFailureInStories = false, 
+	ignoreFailureInView = false, metaFilters = "-skip")
+@UsingSteps(instances = { GorillaMoreBananasStoryTest.class, StaffMustLoginStoryTest.class })
+public class ZOOTestRunner extends InjectableEmbedder {
 
-	private Embedder embedder;
-	
 	@Test
 	@Override
 	public void run() throws Throwable {
-		embedder.runStoriesAsPaths(new StoryFinder().findPaths(this.getClass().getClassLoader().getResource(""),
-                asList("**/*.story"), asList("")));
-		
-	}
-	@Override
-	public void useEmbedder(Embedder embedder) {
-		this.embedder = embedder;
+		List<String> storyPaths = new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/*.story", "");
+		injectedEmbedder().runStoriesAsPaths(storyPaths);
 	}
 
 }

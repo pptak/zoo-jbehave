@@ -12,7 +12,7 @@ Scenario:  Gorilla gets very fair amound of bananas
 Given gorilla gets 20 more bananas
 When gorilla have had the bananas
 Then gorilla is happy 
-And ZOO visitors are satisfy
+And ZOO visitors are satisfied
 					 
 Scenario:  Gorilla gets the same number of bananas as before
 
