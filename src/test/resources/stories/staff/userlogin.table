@@ -1,0 +1,6 @@
+|login|password|response|button|browser|
+|Marc|dksnskadnka|OK|Login|Chrome|
+|Bill|12345|ERROR|Login|Edge|
+|Sussan|Hmal-02oo20|OK|Login|Firefox|
+|Anna|today|ERROR|Login|Opera|
+|Marc|dksnskadnka|TRY_AGAIN|Close|IE|

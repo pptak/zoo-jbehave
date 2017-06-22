@@ -14,15 +14,15 @@ import org.jbehave.core.junit.AnnotatedEmbedderRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import net.zoo.gorilla.GorillaMoreBananasStoryTest;
-import net.zoo.staff.StaffMustLoginStoryTest;
+import net.zoo.gorilla.GorillaMoreBananasSteps;
+import net.zoo.staff.DoLoginSteps;
+import net.zoo.staff.StaffMustLoginToOpenCageSteps;
 
 @RunWith(AnnotatedEmbedderRunner.class)
 @Configure(storyReporterBuilder = ZOOStoryReporterBuilder.class)
-@UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, 
-	ignoreFailureInStories = false, 
-	ignoreFailureInView = false, metaFilters = "-skip")
-@UsingSteps(instances = { GorillaMoreBananasStoryTest.class, StaffMustLoginStoryTest.class })
+@UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, ignoreFailureInStories = false, ignoreFailureInView = false, metaFilters = "-skip")
+@UsingSteps(instances = { GorillaMoreBananasSteps.class, StaffMustLoginToOpenCageSteps.class,
+		DoLoginSteps.class,  })
 public class ZOOTestRunner extends InjectableEmbedder {
 
 	@Test

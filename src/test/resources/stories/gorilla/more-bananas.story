@@ -2,7 +2,8 @@ Meta:
 @author Piotr
 @date	12-06-2017
 
-Narrative:
+Narrative: Gorilla should be more fun
+
 In order to be more attractive for ZOO visitors
 As a gorilla
 I want to more bananas for dinner

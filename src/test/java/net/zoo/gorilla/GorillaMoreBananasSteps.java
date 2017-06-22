@@ -11,14 +11,14 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-public class GorillaMoreBananasStoryTest {
+public class GorillaMoreBananasSteps {
 
 	private Integer bananasNo = -1;
 	private Map<Integer, String> expectedMood = new HashedMap<>();
 	private Map<Integer, String> expectedFilling = new HashedMap<>();
 
 
-	public GorillaMoreBananasStoryTest() {
+	public GorillaMoreBananasSteps() {
 		expectedMood.put(0, "angry");
 		expectedMood.put(5, "sad");
 		expectedMood.put(20, "happy");
