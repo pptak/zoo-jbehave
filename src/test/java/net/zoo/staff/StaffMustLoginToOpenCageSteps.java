@@ -9,11 +9,11 @@ import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-import net.zoo.System;
+import net.zoo.ZOOSystem;
 
 public class StaffMustLoginToOpenCageSteps {
 
-	private System sys = new System();
+	private ZOOSystem sys = new ZOOSystem();
 	private String user = null;
 	private String pin = null;
 	private String wrongPin = null;

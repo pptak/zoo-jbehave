@@ -17,12 +17,13 @@ import org.junit.runner.RunWith;
 import net.zoo.gorilla.GorillaMoreBananasSteps;
 import net.zoo.staff.DoLoginSteps;
 import net.zoo.staff.StaffMustLoginToOpenCageSteps;
+import net.zoo.staff.UserMustHaveARoleSteps;
 
 @RunWith(AnnotatedEmbedderRunner.class)
 @Configure(storyReporterBuilder = ZOOStoryReporterBuilder.class)
 @UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, ignoreFailureInStories = false, ignoreFailureInView = false, metaFilters = "-skip")
-@UsingSteps(instances = { GorillaMoreBananasSteps.class, StaffMustLoginToOpenCageSteps.class,
-		DoLoginSteps.class,  })
+@UsingSteps(instances = { GorillaMoreBananasSteps.class, StaffMustLoginToOpenCageSteps.class, DoLoginSteps.class,
+		UserMustHaveARoleSteps.class })
 public class ZOOTestRunner extends InjectableEmbedder {
 
 	@Test

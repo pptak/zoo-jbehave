@@ -9,26 +9,22 @@ In order to work with ZOO management system
 As a staff of ZOO
 I want to gain at least one role after login
 
-!-- A precondition to entire story
-!-- GivenStories: stories/staff/must-login.story
-
 GivenStories: stories/staff/do-login.story
 					 
-Scenario: User gain exactly one role
+Scenario: User gain functionality for exactly one role
 
-Given role
-When exists
-Then have
+Given user Marc has only one role
+When user login into system
+Then user gain access functionality available for one role and public user role
 
-Scenario: User gain even no one role
+Scenario: User gain functionality for only for public user
 
-Given role
-When exists
-Then have
+Given user Bill has no one role
+When user login into system
+Then user gain access only functionality available for public users
 
-Scenario: User gain more than one role
+Scenario: User gain functionality for more than one role
 
-Given role
-When exists
-Then have
-
+Given user Anna has more than one role
+When user login into system
+Then user gain access at least functionality available for two or more roles and public user role

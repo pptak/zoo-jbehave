@@ -16,7 +16,7 @@
 						<phase>integration-test</phase>
 						<configuration>
 							<includes>
-								<include>**/*Stories.java</include>
+								<include>**/*Steps.java</include>
 							</includes>
 							<metaFilters>
 								<metaFilter>+author *</metaFilter>

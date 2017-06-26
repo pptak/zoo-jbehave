@@ -8,12 +8,12 @@ import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
-import net.zoo.System;
-import net.zoo.System.SYSTEM_RESPONSE;
+import net.zoo.ZOOSystem;
+import net.zoo.ZOOSystem.SYSTEM_RESPONSE;
 
 public class DoLoginSteps {
 	
-	private System sys = new System();
+	private ZOOSystem sys = new ZOOSystem();
 	private String formButton = null;
 	private Boolean login = false; 
 		
@@ -40,8 +40,8 @@ public class DoLoginSteps {
 	
 	@Then("system returns \"<response>\"")
 	public void systemResponse(@Named("response") String response) {
-		System.SYSTEM_RESPONSE sres = System.SYSTEM_RESPONSE.valueOf(response);
-		System.SYSTEM_RESPONSE expected = null;
+		ZOOSystem.SYSTEM_RESPONSE sres = ZOOSystem.SYSTEM_RESPONSE.valueOf(response);
+		ZOOSystem.SYSTEM_RESPONSE expected = null;
 		if (formButton.equals("Close")) {
 			expected = SYSTEM_RESPONSE.TRY_AGAIN;
 		} else if (formButton.equals("Login")) {
