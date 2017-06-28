@@ -21,9 +21,10 @@ import net.zoo.staff.UserMustHaveARoleSteps;
 
 @RunWith(AnnotatedEmbedderRunner.class)
 @Configure(storyReporterBuilder = ZOOStoryReporterBuilder.class)
-@UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, ignoreFailureInStories = false, ignoreFailureInView = false, metaFilters = "-skip")
+@UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, 
+	ignoreFailureInStories = false, ignoreFailureInView = false, metaFilters = "-skip")
 @UsingSteps(instances = { GorillaMoreBananasSteps.class, StaffMustLoginToOpenCageSteps.class, DoLoginSteps.class,
-		UserMustHaveARoleSteps.class })
+		UserMustHaveARoleSteps.class, BeforeAndAfter.class })
 public class ZOOTestRunner extends InjectableEmbedder {
 
 	@Test

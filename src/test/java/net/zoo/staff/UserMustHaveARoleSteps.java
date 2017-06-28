@@ -2,6 +2,8 @@ package net.zoo.staff;
 
 import static org.junit.Assert.assertTrue;
 
+import org.jbehave.core.annotations.AfterStory;
+import org.jbehave.core.annotations.BeforeStory;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -49,6 +51,16 @@ public class UserMustHaveARoleSteps {
 	public void testIfWithMoreThanTwoRoles() {
 		assertTrue("User has less then three roles !", sys.userRoles(user).size() >= 3
 				 && sys.userRoles(user).contains(ZOOSystem.PUBLIC_ACCESS_ROLE_NAME));
+	}
+	
+	@BeforeStory(uponGivenStory=true)
+	public void beforeGivenStory() {
+		System.out.println ("*** Before Given Story: " + getClass().getCanonicalName());
+	}
+	     
+	@AfterStory(uponGivenStory=true)
+	public void afterGivenStory() {
+		System.out.println ("*** After Given Story: " + getClass().getCanonicalName());
 	}
 
 }
